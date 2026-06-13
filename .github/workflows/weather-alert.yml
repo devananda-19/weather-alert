@@ -21,4 +21,9 @@ jobs:
         env:
           OWM_API_KEY: ${{ secrets.OWM_API_KEY }}
           CITY: ${{ secrets.CITY }}
+          SMTP_SERVER: ${{ secrets.SMTP_SERVER }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          ALERT_TO: ${{ secrets.ALERT_TO }}
         run: python weather_alert.py
