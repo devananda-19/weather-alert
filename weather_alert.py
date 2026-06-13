@@ -49,7 +49,7 @@ print(f"Rain predicted: {rain_predicted}")
 send_alert = False
 reasons = []
 
-if temp > 20:
+if temp > 35:
     send_alert = True
     reasons.append(f"Temperature is {temp:.1f}°C")
 
