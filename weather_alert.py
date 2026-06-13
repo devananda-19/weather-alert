@@ -37,12 +37,10 @@ forecast_data = forecast_response.json()
 rain_predicted = False
 
 for item in forecast_data["list"]:
-    weather = item["weather"][0]["main"]
-
-   if rain_predicted:
+    weather = item["weather"][0]["main"] 
+if rain_predicted:
     send_alert = True
     reasons.append("Rain predicted in forecast")
-
 print(f"City: {CITY}")
 print(f"Temperature: {temp}°C")
 print(f"Condition: {condition}")
