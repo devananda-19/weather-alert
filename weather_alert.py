@@ -57,4 +57,4 @@ if send_alert:
 
     print("Email alert sent.")
 else:
-    print("No alert needed."))
+    print("No alert needed.")
