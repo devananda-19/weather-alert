@@ -1,0 +1,24 @@
+name: Weather Alert
+
+on:
+  workflow_dispatch:
+
+jobs:
+  weather-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run script
+        env:
+          OWM_API_KEY: ${{ secrets.OWM_API_KEY }}
+          CITY: ${{ secrets.CITY }}
+        run: python weather_alert.py
