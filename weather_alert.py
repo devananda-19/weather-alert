@@ -64,8 +64,17 @@ if send_alert:
     msg["To"] = ALERT_TO
 
     msg.set_content(
-        "Weather Alert\n\n" + "\n".join(reasons)
-    )
+    f"""🌦 Weather Alert for {CITY}
+
+Temperature: {temp}°C
+Condition: {condition}
+
+Reasons:
+- {chr(10).join(reasons) if reasons else 'No specific reason'}
+
+Stay safe!
+"""
+)
 
     with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
         server.starttls()
