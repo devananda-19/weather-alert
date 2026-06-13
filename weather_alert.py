@@ -32,7 +32,7 @@ print(f"Condition: {condition}")
 send_alert = False
 reasons = []
 
-if temp > 35:
+if temp > 20:
     send_alert = True
     reasons.append(f"Temperature is {temp:.1f}°C")
 
